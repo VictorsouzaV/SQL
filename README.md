@@ -14,4 +14,4 @@ Praticar e consolidar conceitos de banco de dados relacional, desde a modelagem 
 ## Conceitos estudados
 
 - Modelagem de dados (entidades, atributos, relacionamentos, cardinalidade)
-- Comandos SELECT, FROM, WHERE, DISTINCT
+- Comandos SQL
