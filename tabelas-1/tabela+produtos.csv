@@ -1,0 +1,6 @@
+'id_produto','nome_do_produto','descricao','categoria','preco_de_compra','unidade','fornecedor','data_de_inclusao'
+'1','Smartphone 12','Smartphone de última de geração','1','699.99','15','1','2023-08-01'
+'2','Notebook Pro','Notebook poderoso com tela HD','2','1199.99','20','2','2023-08-02'
+'3','Tablet Lite','Tablet compacto e leve','3','299.99','10','3','2023-08-03'
+'4','TV LED 55','TV LED Full HD de 55 polegadas','4','599.99','10','4','2023-08-04'
+'5','Câmera DSLR','Câmerta digital DSLR com lente inetrcambiável','5','699.99','15','5','2023-08-05'
