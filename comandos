@@ -1,0 +1,57 @@
+Comandos SQL
+
+SELECT: Utilizado para selecionar dados de uma tabela
+Ex: SELECT * FROM tabela+usuarios.csv;
+
+FROM: Utilizado para indicar qual tabela pegar os dados
+Ex: SELECT * FROM tabela+pedidos.csv;
+
+WHERE: Utilizado para filtrar os registros de uma tabela com base em uma condição
+Ex: SELECT clientes 
+FROM tabela+pedidos.csv 
+WHERE data_pedido = '10/05/2026';
+
+DISTINCT: Utilizando para retornar valores unicos de uma coluna, e assim evitar duplicatas
+Ex: SELECT DISTINCT ator 
+FROM disney 
+WHERE dublagem = 'Mickey Mouse';
+
+CREATE: Utilizado para criar uma tabela
+Ex: CREATE TABLE tabelaclientes (
+    id_cliente int PRIMARY KEY, 
+    nome_cliente varchar (250), 
+    telefone float, 
+    sexo varchar (10)
+    );
+
+ALTER: Utilizado para alterar uma tabela
+Ex: ALTER TABLE tabelaclientes 
+ADD endereco varchar (250);
+
+DROP: Utilizado para apagar uma tabela, ou banco de dados, ou um esquema
+Ex: DROP TABLE tabelaclientes;
+
+PRIMARY KEY: é um campo ou conjunto de campos em uma tabela de banco de dados que serve para identificar de forma exclusiva
+cada registro nessa tabela. Em outras palavras, é o meio pelo qual o sistema de gerenciamento de banco de dados (SGBD) 
+garante que cada linha de dados seja única e possa ser acessada de forma eficiente.
+Ex: CREATE TABLE tabelaclientes (
+    id_cliente int PRIMARY KEY
+    );
+
+FOREIGN KEY: Tem como objetivo relacionar tabelas e garantir a integridade referencial dos dados
+Ex: FOREIGN KEY (id_cliente) 
+REFERENCES tabelacliente (id); isso serve para quando estamos criando a tabela
+
+Ex 2: ALTER TABLE tabelapedido 
+ADD CONSTRAINT pedido_cliente 
+FOREIGN KEY (id_cliente) 
+REFERENCES tabelacliente (id); isso serve para quando a tabela ja foi criada
+
+INSERT INTO: Comando para referenciar em qual tabela vamos inserir os dados
+VALUES: Comando usado junto do anterior, para inserir os valores nas colunas
+Ex: INSERT INTO tabelacliente
+    (nome,
+    telefone,
+    endereco)
+    VALUES
+    ('joao', 9979858, 'Rua flores - casa 102');
