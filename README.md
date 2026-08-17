@@ -10,6 +10,7 @@ Praticar e consolidar conceitos de banco de dados relacional, desde a modelagem 
 
 - SQLite Online
 - brModelo
+- SQL Power Architect
 
 ## Conceitos estudados
 
