@@ -1,5 +1,6 @@
 Comandos SQL
 
+--- SELECT ---
 SELECT: Utilizado para selecionar dados de uma tabela
 Ex: SELECT * FROM tabela+usuarios.csv;
 
