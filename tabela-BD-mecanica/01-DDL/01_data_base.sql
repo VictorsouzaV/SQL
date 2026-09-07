@@ -1,0 +1,6 @@
+-- OBJETIVO: Criar um data base para uma oficina
+-- CONCEITOS: CREATE, USE
+
+CREATE DATABASE MECANICA;
+
+USE MECANICA;
