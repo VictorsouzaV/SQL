@@ -65,3 +65,147 @@ Ex: INSERT INTO tabelacliente
     endereco)
     VALUES
     ('joao', 9979858, 'Rua flores - casa 102');
+
+--- OPERADORES LÓGICOS---
+AND, OR, BETWEEN, NOT
+
+--- OPERADORES DE COMPARAÇÃO ---
+>, <, =, <>, <=, >=
+
+--- ORDER BY ---
+Comando utilizado para ordenar a tabela na hora da consulta, ela ordena de forma automatica
+em ordem crescente, para ordenar de outra forma devemos colocar DESC (ordem decrescente)
+Ex: SELECT * FROM tabelacliente ORDER BY nome_cliente;
+    SELECT * FROM tabelacliente ORDER BY nome_cliente DESC;
+
+-- AS ---
+Comando utilizado para colocarmos um apelido na coluna que desejamos, mas não substitui o
+nome da coluna, é apenas temporário, apenas durante o uso da consulta
+Ex: SELECT informacoes_cliente AS email_cliente FROM tabelacliente
+
+--- UPDATE --
+Comando utilizado para atualizar o dado de uma tabela
+Ex: UPDATE tabelacliente
+    SET nome = 'Joao'
+    WHERE nome = 'Lucas';
+
+--- DELETE ---
+Comando utilizado para deletar dados de uma tabela
+Ex: DELETE FROM tabelacliente 
+    WHERE nome = 'Lucas';
+
+--- CONCAT ---
+Comando utlizado para quando queremos montar um texo combinando colunas
+Ex: SELECT CONCAT(nome, ' - ', cpf) 
+    AS cliente
+    FROM tabelacliente;
+
+--- UPPER ---
+Comando utilizado para converter texto em letras maiúsculas
+Ex: SELECT UPPER(nome)
+    FROM tabelacliente;
+
+--- LOWER --- 
+Comando utilizado para converter texto em letras minúsculas
+Ex: SELECT LOWER(nome)
+    FROM tabelacliente;
+
+--- SUB STRING ---
+Comando utilizado para obtermos apenas uma parte do texo
+Ex: SELECT SUBSTRING(nome, 1, 3)
+    FROM tabelacliente;
+
+--- CHAR_LENGTH ---
+Comando utilizado para contar a quantidade de caracteres de um texto
+Ex: SELECT nome, CHAR_LENGTH(nome) 
+    AS quantidade
+    FROM tabelacliente;
+
+--- LIKE ---
+Tem como objetivo pesquisar textos conforme um padrão
+
+Símbolos principais:
+%: qualquer quantidade caracteres
+_: exatamente um caractere
+
+Ex: SELECT *
+    FROM tabelacliente
+    WHERE nome LIKE 'M%';
+
+Ex 2: SELECT *
+      FROM tabelacliente
+      WHERE nome LIKE '_aria';
+
+--- REPLACE ---
+Comando utilizado para substitui uma parte do texto
+Ex: SELECT REPLACE(nome, 'a', '@')
+    FROM tabelacliente;
+
+Ponto de atenção: Também podemos usar em UPDATE
+
+--- TRIM, LTRIM, RTRIM ---
+Esses três comandos tem como objetivo em comum remover espaços,
+mas cada um de um jeito específico
+
+--- Remove espaços no começo e no final ---
+Ex TRIM: SELECT TRIM(nome)
+         FROM tabelacliente;
+
+--- Remove espaços na esquerda (no começo) ---
+Ex LTRIMM: SELECT LTRIM(nome)
+           FROM tabelacliente;
+
+--- Remove espaços na direita (no final) ---
+Ex RTRIM: SELECT RTRIM(nome)
+          FROM tabelacliente;
+
+--- LPAD, RPAD ---
+Esses dois comandos tem objetivos em comum, mas de jeitos diferentes
+
+--- Adiciona elementos a esquerda até atigir o tamanho determinado
+Ex LPAD: SELECT LPAD(id_cliente, 6, '0')
+         FROM tabelacliente;
+
+--- Adiciona elementos a direita até atingir o tamanho determinado
+Ex RPAD: SELECT RAPD(nome, 20, '.')
+         FROM tabelacliente;
+
+--- FUNÇÕES DE DATA ---
+Esses comandos são para obtermos dados sobre data, como
+ano, mês, dia
+
+Ex ano: SELECT YEAR(data_servico)
+    FROM Ordem_servico;
+
+Ex mês: SELECT MONTH(data_servico)
+        FROM Ordem_servico;
+
+Ex dia: SELECT DAY(data_servico)
+        FROM tabelacliente;
+
+--- DATE_FORMAT ---
+Comando utilizado para exibir uma data formatada
+Ex: SELECT DATE_FORMAT(data_servico, '%d/%m/%y')
+    FROM Ordem_servico;
+
+--- DATE DIFF ---
+Comando utilizado para calcular a diferença entre duas datas
+Ex: SELECT DATEDIFF('2026-09-20', '2026-09-25');
+
+--- CURDATE, NOW ---
+Esses dois comandos são utilizados para retorna data atual do sistema,
+mas tem uma diferença entre eles
+
+Ex CURDATE: SELECT CURDATE();
+--- resultado: data atual ---
+
+Ex NOW: SELECT NOW();
+--- resultado: data atual e horário
+
+--- DATA ADD ---
+Comando usado para adicionar um período a uma data
+Ex: SELECT DATE_ADD(CURDATE(), INTERVAL 1 MONTH);
+
+--- DATA SUB ---
+Comando usado para remover um periodo de uma data
+Ex: SELECT DATE_SUB(CURDATE(), INTERVAL 1 MONTH);
