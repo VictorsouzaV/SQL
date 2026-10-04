@@ -89,10 +89,14 @@ Ex: UPDATE tabelacliente
     SET nome = 'Joao'
     WHERE nome = 'Lucas';
 
---- DELETE ---
-Comando utilizado para deletar dados de uma tabela
+--- DELETE, DELETE CASCADE ---
+Esses dois tem o mesmo objetivo, mas com funções diferentes
 Ex: DELETE FROM tabelacliente 
     WHERE nome = 'Lucas';
+
+--- Deleta todos os registros do cliente na tabela pedidos, quando são deletados na tabela cliente
+Ex:  FOREIGN KEY (ClienteID) 
+REFERENCES Clientes(ID) ON DELETE CASCADE;
 
 --- CONCAT ---
 Comando utlizado para quando queremos montar um texo combinando colunas
